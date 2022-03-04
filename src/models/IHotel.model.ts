@@ -1,6 +1,7 @@
 import IFacility from "./IFacility.model";
 import IImage from "./IImage.model";
 import IPosition from "./IPosition.model";
+import IRoom from "./IRoom.model";
 
 export default interface IHotel {
   id: string;
@@ -22,4 +23,5 @@ export default interface IHotel {
   checkOutHours: string;
   checkOutMinutes: string;
   position: IPosition;
+  rooms?: IRoom[];
 }

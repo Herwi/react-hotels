@@ -1,0 +1,4 @@
+{
+    "API_URL": "https://obmng.dbm.guestline.net/api",
+    "ERROR_LIFETIME": 3000
+}
