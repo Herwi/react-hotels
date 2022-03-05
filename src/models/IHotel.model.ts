@@ -1,6 +1,7 @@
 import IFacility from "./IFacility.model";
 import IImage from "./IImage.model";
 import IPosition from "./IPosition.model";
+import IRatePlan from "./IRatePlan.model";
 import IRoom from "./IRoom.model";
 
 export default interface IHotel {
@@ -24,4 +25,5 @@ export default interface IHotel {
   checkOutMinutes: string;
   position: IPosition;
   rooms?: IRoom[];
+  ratePlans?: IRatePlan[];
 }

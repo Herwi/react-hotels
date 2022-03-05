@@ -20,11 +20,13 @@ const hotelsLoadSuccess = (hotels: IHotel[]): IAction<IHotel[]> => {
 const hotelRoomsLoadStart = (id: string): IAction<IHotelRooms> => {
   return {
     type: hotelsActionTypes.HOTEL_ROOMS_LOAD_START,
-    payload: {id, rooms: []}
+    payload: { id, rooms: [], ratePlans: [] },
   };
 };
 
-const hotelRoomsLoadSuccess = (hotelRooms: IHotelRooms): IAction<IHotelRooms> => {
+const hotelRoomsLoadSuccess = (
+  hotelRooms: IHotelRooms
+): IAction<IHotelRooms> => {
   return {
     type: hotelsActionTypes.HOTEL_ROOMS_LOAD_SUCCESS,
     payload: hotelRooms,

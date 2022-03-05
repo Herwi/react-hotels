@@ -28,7 +28,11 @@ const hotelsReducer = (
         ...state,
         hotels: [
           ...state.hotels.slice(0, index),
-          { ...state.hotels[index], rooms: hotelRooms.rooms },
+          {
+            ...state.hotels[index],
+            rooms: hotelRooms.rooms,
+            ratePlans: hotelRooms.ratePlans,
+          },
           ...state.hotels.slice(index + 1),
         ],
       };

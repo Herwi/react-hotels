@@ -1,12 +1,10 @@
 import { useEffect } from "react";
 import { loadHotelsAsync } from "./redux/reducers/hotels/hotels.thunk";
-import { useDispatch, useSelector } from "react-redux";
-import IHotelsState from "./models/IHotelsState.model";
-import IReducer from "./models/IReducer.model";
+import { useDispatch } from "react-redux";
+import Hotels from "./components/Hotels/Hotels";
 
 function App() {
   const dispatch = useDispatch();
-  const hotels = useSelector((state: IReducer) => state.hotelsReducer.hotels);
 
   useEffect(() => {
     dispatch(loadHotelsAsync());
@@ -14,7 +12,7 @@ function App() {
 
   return (
     <div>
-      {hotels.map(h => <div key={h.id}>{h.id}</div>)}
+      <Hotels />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import DispatchFunction from "../../../models/IDispatchFunction.model";
 import IHotel from "../../../models/IHotel.model";
+import IRatePlan from "../../../models/IRatePlan.model";
 import IRoom from "../../../models/IRoom.model";
 import hotelsService from "../../../services/hotels.service";
 import { errorHandler } from "../error/error.thunk";
@@ -28,6 +29,7 @@ export const loadHotelRooms =
         hotelsActions.hotelRoomsLoadSuccess({
           id,
           rooms: response.data.rooms as IRoom[],
+          ratePlans: response.data.ratePlans as IRatePlan[],
         })
       );
     } catch (error: unknown) {
