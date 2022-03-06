@@ -5,12 +5,13 @@ import { StarRatingFilter } from "./StarRating";
 const Div = styled.div`
   border: 1px solid ${(props) => props.theme.border.primary};
   padding: 10px 15px;
-  margin: 20px auto 0;
+  margin: -25px auto 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 50%;
   max-width: 600px;
+  background-color: #fff;
 `;
 
 const Column = styled.div`
