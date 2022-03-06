@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
 import IHotel from "../../models/IHotel.model";
 import IImage from "../../models/IImage.model";
 import IReducer from "../../models/IReducer.model";
@@ -12,6 +13,12 @@ interface FilteredHotel {
   filteredRooms: IRoom[];
   images: IImage[];
 }
+
+const CenterMessage = styled.div`
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+`;
 
 const Hotels = () => {
   const hotels = useSelector((state: IReducer) => state.hotelsReducer.hotels);
@@ -58,6 +65,16 @@ const Hotels = () => {
           images={h.images}
         />
       ))}
+      {!hotels.length && (
+        <CenterMessage>
+          There was a problem during loading hotels list.
+        </CenterMessage>
+      )}
+      {hotels.length && !filteredHotels.length && (
+        <CenterMessage>
+          No rooms available with specified filters.
+        </CenterMessage>
+      )}
     </div>
   );
 };
